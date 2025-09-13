@@ -1,5 +1,5 @@
 /* Reset básico */
-body, h1, h2, h3, p, a, ul, li, button {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,12 +15,11 @@ body {
 /* Encabezado principal */
 .main-header {
     position: fixed; 
-    top: 0; 
-    left: 0;
+    top: 0; left: 0;
     width: 100%; 
     z-index: 1000;
     background: #fdfdfd;
-    color: #000000;
+    color: #000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -47,80 +46,62 @@ body {
 .main-nav a {
     margin: 5px 15px;
     text-decoration: none;
-    color: #000000;
+    color: #000;
     font-weight: bold;
     transition: color 0.3s ease;
 }
+.main-nav a:hover { color: #2196da; }
 
-.main-nav a:hover {
-    color: #2196da;
-}
-
-/* Estilos para el menú de hamburguesa (oculto por defecto) */
-.menu-toggle {
-    display: none;
-}
-
+/* Menú hamburguesa */
+.menu-toggle { display: none; }
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     padding: 10px;
 }
-
 .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
+    width: 25px; height: 3px;
+    background: #333;
     margin: 4px 0;
     transition: all 0.3s ease;
 }
 
-/* Sección de héroe */
+/* Sección Hero */
 .hero {
     margin-top: 80px;
     position: relative;
-    width: 100%;
-    height: 500px;
+    width: 100%; height: 500px;
     color: #fff;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
 }
-
 .hero img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     object-fit: cover;
     z-index: 1;
 }
-
 .hero-text {
     position: relative;
     z-index: 2;
-    background-color: rgba(29, 31, 57, 0.57);
+    background: rgba(29, 31, 57, 0.57);
     padding: 20px;
     border-radius: 8px;
     max-width: 80%;
 }
-
 .hero-text h2 {
     font-size: 48px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-
-.hero-text p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.hero-text button {
+.hero-text p { font-size: 18px; margin-bottom: 30px; }
+.hero-text button,
+.about button {
     padding: 12px 25px;
     font-size: 18px;
     background: #2196da;
@@ -128,23 +109,23 @@ body {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
-.hero-text button:hover {
-    background-color: #1a7bbd;
+.hero-text button:hover,
+.about button:hover {
+    background: #1a7bbd;
     transform: translateY(-2px);
 }
 
-/* Sección de características */
+/* Sección características */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 20px;
     padding: 40px 20px;
     background: #f9f9f9;
     text-align: center;
 }
-
 .feature {
     padding: 25px;
     background: #fff;
@@ -156,118 +137,61 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-
 .feature span {
     font-size: 36px;
     display: block;
     margin-bottom: 15px;
     color: #ff4081;
 }
+.feature h3 { font-size: 22px; margin-bottom: 10px; }
+.feature p { font-size: 16px; color: #555; }
 
-.feature h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.feature p {
-    font-size: 16px;
-    color: #555;
-}
-
-/* Sección de "Conócenos" */
+/* Sección Conócenos */
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    text-align: center;
     background: #ebe8e8;
     padding: 50px 20px;
     align-items: center;
+    text-align: center;
 }
-
 .about .grid_1 {
     padding: 40px;
     text-align: left;
 }
+.about h2 { font-size: 38px; margin-bottom: 20px; }
+.about p { font-size: 17px; margin-bottom: 30px; }
+.about img { max-width: 100%; height: auto; }
 
-.about h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about p {
-    font-size: 17px;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-.about button {
-    padding: 12px 25px;
-    font-size: 18px;
-    background: #2196da;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.about button:hover {
-    background-color: #1a7bbd;
-    transform: translateY(-2px);
-}
-
-.about .grid_2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Sección de Productos Trendy */
+/* Productos Trendy */
 .trendy-section {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     padding: 40px 20px;
-    background-color: #000;
+    background: #000;
 }
-
 .trendy-item {
     position: relative;
-    flex: 1; /* Los elementos se distribuyen equitativamente */
+    flex: 1;
     overflow: hidden;
     border-radius: 8px;
     min-height: 200px;
 }
-
 .trendy-item img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
-    display: block;
     filter: brightness(0.5);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-
-.trendy-item:hover img {
-    transform: scale(1.1);
-    filter: brightness(0.7);
-}
-
+.trendy-item:hover img { transform: scale(1.1); filter: brightness(0.7); }
 .trendy-text {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 20px; left: 20px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
-
 .trendy-text span {
     font-size: 15px;
     text-transform: uppercase;
@@ -275,56 +199,35 @@ body {
     margin-bottom: 5px;
     display: block;
 }
+.trendy-text h3 { font-size: 24px; font-weight: bold; }
 
-.trendy-text h3 {
-    font-size: 24px;
-    margin: 0;
-    font-weight: bold;
-}
-
-/* Sección Nosotros */
+/* Nosotros */
 .nosotros {
     background: #f9f9f9;
     padding: 80px 20px;
     text-align: center;
-    color: #333;
 }
-
 .nosotros-container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
     padding: 50px;
 }
+.nosotros h2 { font-size: 40px; margin-bottom: 25px; font-weight: 700; }
+.nosotros p { font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: #555; }
 
-.nosotros h2 {
-    font-size: 40px;
-    margin-bottom: 25px;
-    color: #333;
-    font-weight: 700;
-}
-
-.nosotros p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-/* Sección Misión Visión */
+/* Misión y Visión */
 .mision-vision {
-    background-color: #ebe8e8;
+    background: #ebe8e8;
     padding: 80px 20px;
     text-align: center;
 }
-
 .mision-vision .container {
     display: flex;
     flex-direction: column;
     gap: 50px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
 }
-
 .mision-vision .mision,
 .mision-vision .vision {
     display: flex;
@@ -332,158 +235,97 @@ body {
     align-items: center;
     gap: 30px;
     padding: 30px;
-    background-color: #fff;
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
-
 .mision-vision .mision img,
 .mision-vision .vision img {
-    width: 250px;
-    height: 250px;
+    width: 250px; height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    border: 6px solid #ffffff;
+    border: 6px solid #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
+.mision-vision .espacio h2 { font-size: 32px; margin-bottom: 15px; }
+.mision-vision .espacio p { font-size: 17px; line-height: 1.7; color: #555; }
 
-.mision-vision .espacio h2 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 15px;
-    letter-spacing: 1.2px;
-}
-
-.mision-vision .espacio p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #555;
-}
-
-/* Sección Dónde nos encontramos (Zona 2) */
+/* Zona 2 - Ubicación */
 #zona_2 {
     display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
     padding: 20px;
 }
-
-#zona_2 h2 {
-    font-size: 38px;
-    color: #080808;
-    text-align: center;
-    margin: 40px 0;
-}
-
+#zona_2 h2 { font-size: 38px; margin: 40px 0; }
 #zona_2 iframe {
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    border: none;
-    border-radius: 8px;
+    width: 100%; max-width: 900px; height: 400px;
+    border: none; border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Sección de Contacto (Zona 3) */
-#zona_3 {
-    padding: 20px;
-    background-color: #f0f0f0;
-}
-
+/* Zona 3 - Contacto */
+#zona_3 { padding: 20px; background: #f0f0f0; }
 .elemento_2 {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
     max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: auto;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 .elemento_2 .espacio_1 {
-    background-color: #030303;
+    background: #030303;
     padding: 40px;
     color: #fff;
 }
-
 .elemento_2 .espacio_1 h3 {
     font-size: 20px;
-    margin-top: 25px;
-    margin-bottom: 8px;
+    margin: 25px 0 8px;
     display: flex;
     align-items: center;
 }
-
 .elemento_2 .espacio_1 h3 .icon {
     margin-right: 10px;
     font-size: 24px;
     color: #2196da;
 }
-
-.elemento_2 .espacio_1 p {
-    font-size: 16px;
-    color: #c4c4c4;
-    margin-bottom: 20px;
-}
-
+.elemento_2 .espacio_1 p { font-size: 16px; color: #c4c4c4; margin-bottom: 20px; }
 .elemento_2 .espacio_2 {
-    background-color: #ebe8e8;
+    background: #ebe8e8;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-.elemento_2 .espacio_2 h2 {
-    font-size: 32px;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+.elemento_2 .espacio_2 h2 { font-size: 32px; text-align: center; margin-bottom: 30px; }
 .elemento_2 .espacio_2 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex; flex-direction: column; gap: 15px;
 }
-
-.elemento_2 .espacio_2 form input, 
+.elemento_2 .espacio_2 form input,
 .elemento_2 .espacio_2 form textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+    width: 100%; padding: 12px; font-size: 16px;
+    border: 1px solid #ddd; border-radius: 5px;
     transition: border-color 0.3s ease;
 }
-
 .elemento_2 .espacio_2 form input:focus,
 .elemento_2 .espacio_2 form textarea:focus {
-    border-color: #2196da;
-    outline: none;
+    border-color: #2196da; outline: none;
 }
-
 .elemento_2 .espacio_2 form button {
-    width: auto;
     align-self: flex-end;
     padding: 12px 30px;
     font-size: 18px;
     color: #fff;
-    background-color: #030303;
-    border: none;
-    border-radius: 25px;
+    background: #030303;
+    border: none; border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 .elemento_2 .espacio_2 form button:hover {
-    background-color: #333;
+    background: #333;
     transform: translateY(-2px);
 }
 
@@ -497,275 +339,79 @@ footer {
     font-size: 15px;
 }
 
-/* Media Queries para Responsividad */
-
+/* Responsividad */
 @media (max-width: 992px) {
-    .main-header {
-        padding: 10px 15px;
-    }
-    .logo {
-        width: 100px;
-    }
-    .main-nav a {
-        margin: 5px 10px;
-        font-size: 15px;
-    }
-    .hero {
-        height: 400px;
-        margin-top: 70px;
-    }
-    .hero-text h2 {
-        font-size: 40px;
-    }
-    .hero-text p {
-        font-size: 16px;
-    }
-    .features {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 30px 15px;
-    }
-    .about {
-        grid-template-columns: 1fr;
-        padding: 40px 15px;
-    }
-    .about .grid_1 {
-        padding: 30px;
-        text-align: center;
-    }
-    .about img {
-        max-width: 80%;
-    }
-    .trendy-item {
-        flex: 1 1 45%;
-        min-height: 180px;
-    }
-    .nosotros {
-        padding: 60px 15px;
-    }
-    .nosotros-container {
-        padding: 40px;
-    }
-    .nosotros h2 {
-        font-size: 34px;
-    }
-    .nosotros p {
-        font-size: 16px;
-    }
-    .mision-vision .mision, .mision-vision .vision {
-        flex-direction: column;
-        gap: 20px;
-        padding: 25px;
-    }
-    .mision-vision .espacio h2 {
-        font-size: 28px;
-    }
-    .mision-vision .espacio p {
-        font-size: 16px;
-    }
-    .mision-vision .mision img, .mision-vision .vision img {
-        width: 200px;
-        height: 200px;
-    }
-    #zona_2 h2 {
-        font-size: 32px;
-        margin: 30px 0;
-    }
-    #zona_2 iframe {
-        height: 350px;
-    }
-    .elemento_2 {
-        grid-template-columns: 1fr;
-    }
-    .elemento_2 .espacio_1, .elemento_2 .espacio_2 {
-        padding: 30px;
-    }
-    .elemento_2 .espacio_2 form button {
-        align-self: center;
-        width: 50%;
-        margin-right: 0;
-    }
+    .logo { width: 100px; }
+    .main-nav a { margin: 5px 10px; font-size: 15px; }
+    .hero { height: 400px; margin-top: 70px; }
+    .hero-text h2 { font-size: 40px; }
+    .hero-text p { font-size: 14px; }
+    .features { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); padding: 30px 15px; }
+    .about { grid-template-columns: 1fr; padding: 40px 15px; }
+    .about .grid_1 { padding: 30px; text-align: center; }
+    .about img { max-width: 80%; }
+    .trendy-item { flex: 1 1 45%; min-height: 180px; }
+    .nosotros { padding: 60px 15px; }
+    .nosotros h2 { font-size: 34px; }
+    .nosotros p { font-size: 16px; }
+    .mision-vision .espacio h2 { font-size: 28px; }
+    .mision-vision .espacio p { font-size: 16px; }
+    .mision-vision .mision img, .mision-vision .vision img { width: 200px; height: 200px; }
+    #zona_2 h2 { font-size: 32px; }
+    #zona_2 iframe { height: 350px; }
+    .elemento_2 { grid-template-columns: 1fr; }
+    .elemento_2 .espacio_2 form button { align-self: center; width: 50%; }
 }
 
 @media (max-width: 767px) {
-    /* Estilos del header para menú de hamburguesa */
-    .logo-nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
     .main-nav {
         display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px;
-        left: 0;
-        background-color: #fdfdfd;
+        top: 80px; left: 0;
+        background: #fdfdfd;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         padding: 20px;
     }
-    .main-nav a {
-        padding: 10px 0;
-        text-align: center;
-    }
-    .hamburger {
-        display: flex;
-    }
-    .menu-toggle:checked ~ .main-nav {
-        display: flex;
-    }
-
-    /* Ajustes generales de layout para móviles */
-    .hero {
-        height: 300px;
-        margin-top: 100px;
-    }
-    .hero-text h2 {
-        font-size: 32px;
-    }
-    .hero-text p {
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-    .hero-text button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-    .features {
-        grid-template-columns: 1fr;
-        padding: 20px 10px;
-    }
-    .feature {
-        padding: 20px;
-    }
-    .feature span {
-        font-size: 30px;
-    }
-    .about {
-        padding: 30px 10px;
-    }
-    .about .grid_1 {
-        padding: 20px;
-    }
-    .about h2 {
-        font-size: 30px;
-    }
-    .about p {
-        font-size: 15px;
-        margin-bottom: 20px;
-    }
-    .about button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-    .about img {
-        max-width: 90%;
-    }
-    .trendy-section {
-        flex-direction: column;
-        padding: 30px 10px;
-    }
-    .trendy-item {
-        flex: 1 1 100%;
-        min-height: 150px;
-    }
-    .trendy-text span {
-        font-size: 13px;
-    }
-    .trendy-text h3 {
-        font-size: 20px;
-    }
-    .nosotros {
-        padding: 50px 10px;
-    }
-    .nosotros-container {
-        padding: 30px;
-    }
-    .nosotros h2 {
-        font-size: 28px;
-    }
-    .nosotros p {
-        font-size: 15px;
-    }
-    .mision-vision {
-        padding: 50px 10px;
-    }
-    .mision-vision .mision img, .mision-vision .vision img {
-        width: 180px;
-        height: 180px;
-    }
-    .mision-vision .espacio h2 {
-        font-size: 24px;
-    }
-    .mision-vision .espacio p {
-        font-size: 15px;
-    }
-    #zona_2 h2 {
-        font-size: 28px;
-        margin: 20px 0;
-    }
-    #zona_2 iframe {
-        height: 250px;
-    }
-    .elemento_2 .espacio_1, .elemento_2 .espacio_2 {
-        padding: 25px;
-    }
-    .elemento_2 .espacio_1 h3 {
-        font-size: 18px;
-    }
-    .elemento_2 .espacio_1 p {
-        font-size: 14px;
-    }
-    .elemento_2 .espacio_2 h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    .elemento_2 .espacio_2 form button {
-        width: 70%;
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-    footer {
-        margin-top: 50px;
-        padding: 20px 10px;
-        font-size: 14px;
-    }
+    .main-nav a { padding: 10px 0; text-align: center; }
+    .hamburger { display: flex; }
+    .menu-toggle:checked ~ .main-nav { display: flex; }
+    .hero { height: 300px; margin-top: 100px; }
+    .hero-text h2 { font-size: 32px; }
+    .hero-text p { font-size: 13px; margin-bottom: 15px; }
+    .hero-text button, .about button { padding: 10px 20px; font-size: 16px; }
+    .features { grid-template-columns: 1fr; padding: 20px 10px; }
+    .feature span { font-size: 30px; }
+    .about h2 { font-size: 30px; }
+    .about p { font-size: 15px; }
+    .about img { max-width: 90%; }
+    .trendy-section { flex-direction: column; }
+    .trendy-item { min-height: 150px; }
+    .trendy-text h3 { font-size: 20px; }
+    .nosotros h2 { font-size: 28px; }
+    .nosotros p { font-size: 15px; }
+    .mision-vision .mision img, .mision-vision .vision img { width: 180px; height: 180px; }
+    .mision-vision .espacio h2 { font-size: 24px; }
+    #zona_2 h2 { font-size: 28px; }
+    #zona_2 iframe { height: 250px; }
+    .elemento_2 .espacio_1 h3 { font-size: 18px; }
+    .elemento_2 .espacio_1 p { font-size: 14px; }
+    .elemento_2 .espacio_2 h2 { font-size: 28px; }
+    .elemento_2 .espacio_2 form button { width: 70%; }
+    footer { margin-top: 50px; font-size: 14px; }
 }
 
-/* Pequeños teléfonos */
 @media (max-width: 480px) {
-    .main-nav a {
-        font-size: 13px;
-    }
-    .hero-text h2 {
-        font-size: 28px;
-    }
-    .hero-text p {
-        font-size: 14px;
-    }
-    .hero {
-        height: 250px;
-    }
-    .feature span {
-        font-size: 26px;
-    }
-    .about h2 {
-        font-size: 26px;
-    }
-    .trendy-text h3 {
-        font-size: 18px;
-    }
-    .nosotros h2 {
-        font-size: 24px;
-    }
-    .mision-vision .mision img, .mision-vision .vision img {
-        width: 150px;
-        height: 150px;
-    }
-    .mision-vision .espacio h2 {
-        font-size: 22px;
-    }
-    .elemento_2 .espacio_2 form button {
-        width: 80%;
-    }
+    .main-nav a { font-size: 13px; }
+    .hero { height: 250px; }
+    .hero-text h2 { font-size: 28px; }
+    .hero-text p { font-size: 14px; }
+    .feature span { font-size: 26px; }
+    .about h2 { font-size: 26px; }
+    .trendy-text h3 { font-size: 18px; }
+    .nosotros h2 { font-size: 24px; }
+    .mision-vision .mision img, .mision-vision .vision img { width: 150px; height: 150px; }
+    .mision-vision .espacio h2 { font-size: 22px; }
+    .elemento_2 .espacio_2 form button { width: 80%; }
 }
