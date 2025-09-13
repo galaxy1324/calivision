@@ -377,7 +377,7 @@ footer {
     .main-nav a { padding: 10px 0; text-align: center; }
     .hamburger { display: flex; }
     .menu-toggle:checked ~ .main-nav { display: flex; }
-    .hero { height: 300px; margin-top: 100px; }
+    .hero { height: 200px; margin-top: 120px; }
     .hero-text h2 { font-size: 32px; }
     .hero-text p { font-size: 12px; margin-bottom: 10px; }
     .hero-text button, .about button { padding: 10px 20px; font-size: 16px; }
@@ -415,4 +415,5 @@ footer {
     .mision-vision .espacio h2 { font-size: 22px; }
     .elemento_2 .espacio_2 form button { width: 80%; }
 }
+
 
